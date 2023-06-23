@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcmeDem | Movie</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    
+    
+</head>
+<body style="background: black;">
+
+    <style>
+       h1, h3{
+            filter: brightness(.80);
+        }
+        p{
+            filter: brightness(.70);
+        }
+    </style>
+
+<nav style="background-color: rgb(8, 8, 8)" id="nav" class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a id="active" href="#" class="navbar-brand fw-bold "><span class="text-light">Ans</span>ima</a>
+        <button class="  navbar-toggler"
+        data-bs-target="#menu"
+        data-bs-toggle="collapse">
+<span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="navbar-collapse collapse text-center   " id="menu">
+            <ul class="  navbar-nav ms-auto text-sm-start d-flex gap-sm-5 gap-0  ">
+                <li class="nav-item">
+                    <a href="index.html#show" class="nav-link fw-bold  mt-3 mt-sm-0 "> <i class="fa fa-home"></i> Home</a>
+                </li>
+                
+                    <a href="#" class="nav-link"><i class="fa fa-book"></i> Blogs </a>
+                </li> <li class="nav-item">
+                    <a  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    
+                    href="#" class="nav-link"><img id="profile" src="img/stan.png" alt="" class="img-fluid"> My Profile </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div  class="modal  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark text-center m-auto" id="exampleModalLabel"><img src="img/stan.png" alt="" class="img-fluid w-50" id="profile">
+        <br>
+       Stan Cizungu
+        </h5>
+        <br>
+      
+      </div>
+      <div class="modal-body text-center m-auto">
+        
+        
+        <p class="lead text-dark">I am a front-end web developer, fitness instructor and amateur boxer who finds great
+          pleasure in programming and sustaining a healthy lifestyle
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a style="background: red;" href="" class="btn btn-sm text-light "><i class="fa fa-pen"></i> Edit</a>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="text-light container">
+    <main id="movie_show" class="p-5 " >
+   
+   
+    
+    </main>
+</section>
+
+  <span id="cover">  
+
+
+<main style="background: black;" id="related-movie" class="container p-5 text-light gap-2  gap-sm-3">
+
+
+
+</main>
+
+</span>
+
+
+
+<footer style="background-color:black;">
+    <div class="p-3 container text-light text-center align-center">
+      <p class=" fw-bold">Copyright  All rights reserved Ansima pty(ltd) 2021 &copy; </p>
+      <div class=" justify-content-center m-auto d-flex gap-2">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-github"></i>
+    
+   
+      </div>
+    </div>
+     
+    </footer >
+    
+    
+        <script src="js/bootstrap.min.js"></script>
+        <script type="module"  src="js/app.js"></script>
+
+        <script >
+
+function trun(word, count){
+  //set word to arr
+  var res;
+   res = word.split(' ');
+  res.length = count;
+
+ return res.join(' ')
+ 
+}
+
+function check(e){
+  var res;
+  var a =e.target.classList.contains('btn-sm')
+  if(a){
+ res = e.target.firstElementChild.innerHTML;
+ //set movie name to local storage
+ localStorage.setItem('Id', res);
+  }
+  
+}
+
+
+function related(img,title,btn){
+  return  ` <div class="card   border-0" ">
+  
+    <img load="eager" src="${img}" class="card-img-top img-fluid " alt="...">
+    <div style="background:black;" class="card-body  text-light">
+      <p class="card-text text-light fw-bold">${trun(title,4)}</p>
+      <a href="movie.html" id="click" style="background: red;" class=" btn btn-sm d-grid  text-light" >
+      <span class="identify" style="display:none;">${btn}</span>
+     Details
+      </a>
+    </div>
+  </div>
+ 
+ 
+`
+}
+
+
+var movies_infor = document.getElementById('movie_show');
+
+//fetch function from session storage baby
+var item = localStorage.getItem('Id');
+
+if(!item || item==''){
+    item = 2;
+    
+}
+
+
+function show(){
+    
+fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${item}`)
+.then(res=>res.json())
+.then(data=>{
+    var obj = data.data.movie;
+  
+
+    movies_infor.innerHTML = `
+    <section class="container text-light gap-sm-5 d-block d-sm-flex justify-item-between justify-content-between">
+        <div class="text-center w-100">
+<img loading="eager" class="img-fluid w-60 " src="${obj.medium_cover_image}" alt="...">
+
+<p style="color:grey" class=" fw-bold pt-2 text-center">
+    ${obj.genres.join(' , ')}
+</p>
+<div class="container w-50"> 
+    <a style="background:red" href="index.html#show" class= "btn   d-grid btn-sm text-light">Return </a>
+    </div>
+        </div>
+
+        <div class="container  w-sm-50">
+<h3 class="fw-bold pb-1 text-sm-start text-center">${obj.title_long}</h3 class="fw-bold">
+    <p class="text-light lead text-sm-start text-center">${trun(obj.description_full, 70)}...
+
+        </p>
+        <span id="icons" class="d-flex gap-1 text-center">
+            <a style="background:red;" href="${obj.torrents[0].url}" class="btn  btn-sm text-light"><i class="fa fa-download"></i></a>
+        <a href="#" class="btn btn-dark btn-sm text-light"> 
+            <i class="fa fa-thumbs-up"></i>
+            ${obj.like_count}</a>
+    <a href="#" class="btn btn-dark btn-sm text-light">${obj.rating} <i class="fa fa-star"></i></a>
+    <a href="#" class="btn btn-dark btn-sm text-light">${obj.language}</a>
+    <a href="#" class="btn btn-dark btn-sm text-light">${obj.year}</a>
+    
+    </span>
+   
+   
+        </div>
+
+    </section>
+
+  
+    `
+  
+   
+})
+.catch(err=>{
+    console.log(err)
+    document.querySelector('body').innerHTML = `<div class="container mt-5 pt-5 w-100 justify-content-center text-center"> 
+        <img style="width:8rem" class="img-fluid " src="/img/error.png" alt="...">
+        <p class="text-light">Connect to the Internet!</p>
+        <a style="background:red;" href="index.html" class="btn btn-sm text-light ">Reload Page</a>
+        </div>`
+})
+
+}
+
+
+
+var sugg = document.getElementById('related-movie');
+sugg.addEventListener('click',check)
+
+
+function suggest(url,callback){
+
+    callback();
+fetch(`https://yts.mx/api/v2/${url}.json?movie_id=${item}`)
+.then(res=>res.json())
+.then(data=>{
+    var arr =data.data.movies
+sugg.innerHTML = ''
+var div = document.createElement('div');
+div.innerHTML = `<div class="container text-light">
+    <h1   class="text-center text-light d-block  fw-bold">Movie<span id="active">Suggestions</span></h1>
+    <hr   class="text-active w-50 text-center text-light m-auto   ">
+</div>`
+var span = document.getElementById('cover');
+span.insertBefore(div, sugg)
+
+
+    for(let ar of arr){
+     sugg.innerHTML += related(ar.medium_cover_image,ar.title,ar.id)   
+
+    }
+}).catch(err=>{
+    console.log(err)
+})
+
+
+}
+
+//call suggest function
+suggest('movie_suggestions',show)
+
+        </script>
+    
+    </body>
+    </html>

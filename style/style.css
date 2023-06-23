@@ -1,0 +1,241 @@
+span#icons {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.filter, footer {
+  filter: brightness(0.5);
+}
+
+body{
+  background: black;
+background-image: url(/img/titanic-1.jpg);
+}
+
+input {
+  filter: brightness(0.9);
+}
+
+a.btn {
+  filter: brightness(0.8);
+}
+
+button {
+  filter: brightness(0.8);
+}
+
+img {
+  filter: brightness(0.9);
+}
+
+img#bright
+{
+  filter: brightness(0.7)
+}
+
+.btn-new {
+  background-color: red;
+  color: white;
+}
+
+nav#nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  
+}
+
+div#container{
+  width: 50%;
+  
+ 
+ height: 100vh;
+ align-items: center;
+ align-content: center;
+ 
+  
+  margin: auto;
+  
+
+}
+
+
+nav a.navbar-brand {
+  filter: brightness(0.5);
+}
+
+.bg-active {
+  background-color: red;
+  color: white;
+}
+
+#active {
+  color: red;
+  filter: brightness(0.9);
+}
+
+.text-active {
+  color: red;
+}
+
+#showcase {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: url(https://cdn4.dogonews.com/images/e4bd37fd-37a5-4c40-b298-ec508bd86871/nxvmf8m.jpg);
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+main#list {
+  filter: brightness(0.9);
+}
+img#rib{
+  width: 50px;
+}
+
+section#content {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+section#content h1, section#content p {
+  filter: brightness(0.7);
+}
+
+section#content .btn-new {
+  color: white;
+  border: 2px solid #ccc;
+  text-decoration: none;
+  padding: .5rem;
+}
+
+section#result {
+  display: grid;
+  padding: 2rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+section#subscribe {
+  overflow: hidden;
+}
+
+section#subscribe input {
+  width: 70%;
+  margin: auto;
+}
+
+section#popular {
+  background-color: black;
+  display: flex;
+  margin: auto;
+  padding: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+section#popular p {
+  color: #333;
+} 
+img#profile{
+  width: 50px;
+}
+
+div#kids div h1, div#kids div p {
+  color: grey;
+}
+
+main#list h1 span {
+  filter: opacity(0.8);
+}
+
+form#form input{
+  display: grid;
+  width: 80%;
+}
+
+
+main#related-movie{
+  display: flex;
+}
+
+
+
+
+@media (max-width: 575px) {
+
+  div#container{
+    width: 100%;
+    margin: auto;
+    display: grid;
+  }
+
+  form#form input{
+    display: grid;
+    width: 100%;
+  }
+
+  section#popular {
+    display: grid;
+    margin: auto;
+    padding-bottom: 5rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    grid-gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  section#popular p {
+    color: white;
+  }
+  section#result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main#related-movie{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+ 
+}
+
+@media (max-width: 800px) {
+  section#result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+main#movie_show #follow {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
