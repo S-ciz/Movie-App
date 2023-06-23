@@ -1,5 +1,5 @@
 # A simple vanilla javascript movie app with Fetch API (YTS Movies Free API) 
-# Live Demo Link : 
+# Live Demo: 
 https://s-ciz.github.io/Movie-App/
 
 # Home Page
@@ -9,4 +9,8 @@ https://s-ciz.github.io/Movie-App/
 
 # Movie Details/Information 
 ![image](https://github.com/S-ciz/Movie-App/assets/95995178/d753adfa-2c5b-4982-857e-9e951f021375)
+
+# Movie Suggestion section
+![image](https://github.com/S-ciz/Movie-App/assets/95995178/b445d794-4b34-4834-a486-fafabb352a93)
+
 
