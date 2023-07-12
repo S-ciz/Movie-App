@@ -2,6 +2,8 @@
 # Live Demo: 
 https://s-ciz.github.io/Movie-App/
 
+# Free YTS api LINK : https://yts.mx/api
+# No API KEY needed
 # Home Page
 ![image](https://github.com/S-ciz/Movie-App/assets/95995178/cb478246-3da8-41d3-b7c9-dcebf4d7a6a4) 
 # Movie Search section
